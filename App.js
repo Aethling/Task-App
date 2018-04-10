@@ -105,10 +105,15 @@ class App extends Component {
 		this.setState({
 			completedList: !this.state.completedList
 		});
-		togglePriorityList = () =>
+	togglePriorityList = () =>
 		this.setState({
 			priorityList: !this.state.priorityList
 		});
+	setAllList = () =>
+		this.setState({
+			completedList: false,
+			priorityList: false
+		})
 
   render() {
     return (
@@ -118,6 +123,7 @@ class App extends Component {
         		pendingTask={this.state.pendingTask}
         		toggleCompletedList={this.toggleCompletedList}
         		togglePriorityList={this.togglePriorityList}
+        		setAllList={this.setAllList}
         		/>
 
         <RenderItems todos={this.state.todos}
@@ -127,7 +133,8 @@ class App extends Component {
         			toggleEdit={this.toggleEdit}
         			togglePriority={this.togglePriority}
         			toggleComplete={this.toggleComplete}
-        			isCompleted={this.state.completedList}/>
+        			isCompletedList={this.state.completedList}
+        			isPriorityList={this.state.priorityList}/>
       </div>
     );
   }

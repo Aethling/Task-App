@@ -19,7 +19,7 @@ const Title = (props) =>
               <div className="container">
                 <ul>
                   <li className="is-active">
-                    <a>All</a>
+                    <a onClick={props.setAllList}>All</a>
                   </li>
                   <li>
                     <a onClick={props.toggleCompletedList}>Completed</a>
