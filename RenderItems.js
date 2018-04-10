@@ -5,18 +5,34 @@ import PropTypes from 'prop-types';
 const RenderItems = (props) => {
   return (
     <div>
-    	{props.todos.map((todo, index) =>
+    	{props.isCompletedList ? 
+    		props.todos.filter(todo => todo.isCompleted)
+    		.map((todo, index) => 
 	    	<Item key={index} 
 	    		task={todo.task}
 	    		isCompleted={todo.isCompleted}
+	    		handleCheckbox={() => props.toggleComplete(index)}
 	    		isPriority={todo.isPriority}
 	    		handleDeleteClick={() => props.deleteItemAt(index)}
-	    		handleEditClick={() => props.handleEditAt(index)}
 	    		isEditing={todo.isEditing}
+	    		handleEditClick={() => props.handleEditAt(index)}
 	    		handleEdit={e => props.setNameAt(index, e.target.value)}
-    			handleEditSave={() => props.toggleEdit(index)}
     			handlePriorityClick={() => props.togglePriority(index)}/>
-	    		)};
+	    		) :
+    		props.todos.map((todo, index) => 
+	    	<Item key={index} 
+	    		task={todo.task}
+	    		isCompleted={todo.isCompleted}
+	    		handleCheckbox={() => props.toggleComplete(index)}
+	    		isPriority={todo.isPriority}
+	    		handleDeleteClick={() => props.deleteItemAt(index)}
+	    		isEditing={todo.isEditing}
+	    		handleEditClick={() => props.handleEditAt(index)}
+	    		handleEdit={e => props.setNameAt(index, e.target.value)}
+    			handlePriorityClick={() => props.togglePriority(index)}/>
+	    		)
+    	}
+    	
     </div>
   )
 }

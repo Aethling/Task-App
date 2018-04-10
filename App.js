@@ -7,6 +7,8 @@ import RenderItems from './RenderItems';
 class App extends Component {
 	state = {
 		pendingTask: '',
+		completedList: false,
+		priorityList: false,
 		todos: [
 			{
 				task: "Feed Chillberto",
@@ -60,8 +62,20 @@ class App extends Component {
 				return todo;
 			})
 		});
-	toggleEdit = (indexToChange) =>
-		this.handleEditAt(indexToChange);
+
+
+	toggleComplete = (indexToChange) =>
+		this.setState({
+			todos: this.state.todos.map((todo, index) => {
+				if(indexToChange === index) {
+					return {
+						...todo,
+						isCompleted: !todo.isCompleted
+					};
+				}
+					return todo;
+			})
+		});
 
 	setNameAt = (indexToChange, text) => 
 		this.setState({
@@ -87,19 +101,33 @@ class App extends Component {
 					return todo;
 			})
 		});
+	toggleCompletedList = () =>
+		this.setState({
+			completedList: !this.state.completedList
+		});
+		togglePriorityList = () =>
+		this.setState({
+			priorityList: !this.state.priorityList
+		});
 
   render() {
     return (
       <div>
         <Title addTask={this.addTask}
         		handlePendingTask={this.handlePendingTask}
-        		pendingTask={this.state.pendingTask}/>
+        		pendingTask={this.state.pendingTask}
+        		toggleCompletedList={this.toggleCompletedList}
+        		togglePriorityList={this.togglePriorityList}
+        		/>
+
         <RenderItems todos={this.state.todos}
         			deleteItemAt={this.deleteItemAt}
         			handleEditAt={this.handleEditAt}
         			setNameAt={this.setNameAt}
         			toggleEdit={this.toggleEdit}
-        			togglePriority={this.togglePriority}/>
+        			togglePriority={this.togglePriority}
+        			toggleComplete={this.toggleComplete}
+        			isCompleted={this.state.completedList}/>
       </div>
     );
   }

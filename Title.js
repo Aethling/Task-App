@@ -22,10 +22,10 @@ const Title = (props) =>
                     <a>All</a>
                   </li>
                   <li>
-                    <a>Completed</a>
+                    <a onClick={props.toggleCompletedList}>Completed</a>
                   </li>
                   <li>
-                    <a>Priority!</a>
+                    <a onClick={props.togglePriorityList}>Priority!</a>
                   </li>
                 </ul>
               </div>

@@ -13,7 +13,8 @@ const Item = (props) => {
 
 			<span>
 				<label>
-		    		<input type="checkbox"/>
+		    		<input type="checkbox"
+		    					onClick={props.handleCheckbox}/>
 	    	</label>
 			</span>
 			<ItemInput handleEdit={props.handleEdit}
