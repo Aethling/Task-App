@@ -9,7 +9,7 @@ const Item = (props) => {
 			color: props.isPriority ? "red" : "grey"
 		}
 	return (
-		<div className="box">
+		<div className="boxes">
 
 			<span>
 				<label>

@@ -15,7 +15,7 @@ const RenderItems = (props) => {
 		    		isPriority={todo.isPriority}
 		    		handleDeleteClick={() => props.deleteItemAt(index)}
 		    		isEditing={todo.isEditing}
-		    		handleEditClick={() => props.handleEditAt(index)}
+		    		handleEditClick={() => props.toggleEdit(index)}
 		    		handleEdit={e => props.setNameAt(index, e.target.value)}
 	    			handlePriorityClick={() => props.togglePriority(index)}/>
 		    		)}
@@ -33,7 +33,7 @@ const RenderItems = (props) => {
 			    		isPriority={todo.isPriority}
 			    		handleDeleteClick={() => props.deleteItemAt(index)}
 			    		isEditing={todo.isEditing}
-			    		handleEditClick={() => props.handleEditAt(index)}
+			    		handleEditClick={() => props.toggleEdit(index)}
 			    		handleEdit={e => props.setNameAt(index, e.target.value)}
 		    			handlePriorityClick={() => props.togglePriority(index)}/>
 			    		)}
@@ -50,7 +50,7 @@ const RenderItems = (props) => {
 		    		isPriority={todo.isPriority}
 		    		handleDeleteClick={() => props.deleteItemAt(index)}
 		    		isEditing={todo.isEditing}
-		    		handleEditClick={() => props.handleEditAt(index)}
+		    		handleEditClick={() => props.toggleEdit(index)}
 		    		handleEdit={e => props.setNameAt(index, e.target.value)}
 	    			handlePriorityClick={() => props.togglePriority(index)}/>
 		    		)}

@@ -50,32 +50,27 @@ class App extends Component {
 				...this.state.todos.slice(index + 1)
 			]
 		});
-	handleEditAt = indexToChange =>
-		this.setState({
-			todos: this.state.todos.map((todo, index) => {
-				if (indexToChange === index) {
-					return {
-						...todo,
-						isEditing: !todo.isEditing
-					};
-				}
-				return todo;
-			})
-		});
 
-
-	toggleComplete = (indexToChange) =>
+	togglePropertyAt = (property, indexToChange) =>
 		this.setState({
 			todos: this.state.todos.map((todo, index) => {
 				if(indexToChange === index) {
 					return {
 						...todo,
-						isCompleted: !todo.isCompleted
+						[property]: !todo[property]
 					};
 				}
 					return todo;
 			})
 		});
+	toggleEdit = (index) =>
+		this.togglePropertyAt("isEditing", index);
+
+	toggleComplete = (index) =>
+		this.togglePropertyAt("isCompleted", index);
+
+	togglePriority = (index) =>
+		this.togglePropertyAt("isPriority", index);
 
 	setNameAt = (indexToChange, text) => 
 		this.setState({
@@ -89,18 +84,7 @@ class App extends Component {
 				return todo;	
 			})
 		});
-	togglePriority = (indexToChange) =>
-		this.setState({
-			todos: this.state.todos.map((todo, index) => {
-				if (indexToChange === index) {
-					return {
-						...todo,
-						isPriority: !todo.isPriority
-					};
-				}
-					return todo;
-			})
-		});
+	
 	toggleCompletedList = () =>
 		this.setState({
 			completedList: !this.state.completedList
@@ -125,16 +109,16 @@ class App extends Component {
         		togglePriorityList={this.togglePriorityList}
         		setAllList={this.setAllList}
         		/>
-
-        <RenderItems todos={this.state.todos}
-        			deleteItemAt={this.deleteItemAt}
-        			handleEditAt={this.handleEditAt}
-        			setNameAt={this.setNameAt}
-        			toggleEdit={this.toggleEdit}
-        			togglePriority={this.togglePriority}
-        			toggleComplete={this.toggleComplete}
-        			isCompletedList={this.state.completedList}
-        			isPriorityList={this.state.priorityList}/>
+        <div className="todosContainer">
+	        <RenderItems todos={this.state.todos}
+	        			deleteItemAt={this.deleteItemAt}
+	        			toggleEdit={this.toggleEdit}
+	        			setNameAt={this.setNameAt}
+	        			togglePriority={this.togglePriority}
+	        			toggleComplete={this.toggleComplete}
+	        			isCompletedList={this.state.completedList}
+	        			isPriorityList={this.state.priorityList}/>
+	      </div>
       </div>
     );
   }
