@@ -10,18 +10,6 @@ class App extends Component {
 		completedList: false,
 		priorityList: false,
 		todos: [
-			{
-				task: "Feed Chillberto",
-				isCompleted: false,
-				isPriority: true,
-				isEditing: false
-			},
-			{
-				task: "Sweep the Floor",
-				isCompleted: false,
-				isPriority: false,
-				isEditing: false
-			}
 		]
 	};
 
