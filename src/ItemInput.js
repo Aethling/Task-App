@@ -12,9 +12,9 @@ const ItemInput = (props) => {
 	  )
 	}
 		return (
-				<span className="theTask">
-					{props.task}
-				</span>
+			<span className="theTask">
+				{props.task}
+			</span>
 		);
 }
 

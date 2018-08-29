@@ -51,13 +51,13 @@ class App extends Component {
 					return todo;
 			})
 		});
-	toggleEdit = (index) =>
+	toggleEdit = index =>
 		this.togglePropertyAt("isEditing", index);
 
-	toggleComplete = (index) =>
+	toggleComplete = index =>
 		this.togglePropertyAt("isCompleted", index);
 
-	togglePriority = (index) =>
+	togglePriority = index =>
 		this.togglePropertyAt("isPriority", index);
 
 	setNameAt = (indexToChange, text) => 

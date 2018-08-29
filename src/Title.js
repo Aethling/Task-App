@@ -6,7 +6,7 @@ const Title = (props) =>
     	<section className="hero is-info">
         <div className="hero-body">
           <div className="container has-text-right">
-            <h1 className="title">Todo App </h1>
+            <h1 className="title">Task App </h1>
             <h5 className="subtitle">with React</h5>
           </div>
           </div>

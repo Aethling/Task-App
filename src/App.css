@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+.hero-body{
+  padding-bottom: 0px;
+  height: 100px;
+}
+
+.input {
+  margin-top: 20px;
+}
+.submit {
+  float: right;
+  margin-top: 20px;
+}
+.inputContainer {
+  padding: 10px;
+}
+.icon { 
+  float: right;
+  position: relative;
+  top: -20px;
+}
+.boxes {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0px 1px 3px;
+}
+
+.taskButton { 
+  float: right;
+  top: -4px;  
+}
+.theTask {
+  margin-left: 15px;
+  position: relative;
+  top: 2px;
+}
+.editInput {
+    margin-left: 15px;
+    height: 30px;
+    width: 39%;
+    font-size: 16px;
+    color: grey;
+}
+.todosContainer {
+  padding: 10px;
+}
